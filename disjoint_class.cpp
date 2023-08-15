@@ -57,4 +57,6 @@ int main()
     ds.unionByRank(3,7);
     if(ds.find_parent(3)==ds.find_parent(7)) cout<<"same"<<endl;
     else cout<<"Not same"<<endl;
+    cout<<"This can be used as a sample for dsu"<<endl;
+    
 }
