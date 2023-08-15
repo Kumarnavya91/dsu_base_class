@@ -1,0 +1,2 @@
+DSU is a data structure which is used for checking whether two elements belong to same set or not and its time complexity is 4 alpha.
+This has been implemented through path compression and joining little set with greater set. It is better to with union by size and not union by rank.
