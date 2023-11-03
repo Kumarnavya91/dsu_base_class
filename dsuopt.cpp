@@ -19,13 +19,8 @@ class DSU
     }
     int find_parent(int x)
     {
-
-        while(parent[x]!=x)
-        {
-            parent[x]=parent[parent[x]];
-            x=parent[x];
-        }
-        return x;
+        if(x==parent[x]) return x;
+        return parent[x]=find_parent(parent[x]);
     }
     void  combine(int u,int v)
     {
@@ -43,6 +38,19 @@ class DSU
             subtreeSize[rv]=subtreeSize[ru]+subtreeSize[rv];
         }
         
-           }
+     }
 
 };
+int main()
+{
+    DSU ds(7);
+    ds.combine(1,2);
+    ds.combine(2,3);
+    ds.combine(4,5);
+    ds.combine(6,7);
+    ds.combine(5,6);
+    if(ds.find_parent(3)==ds.find_parent(7)) cout<<"same"<<endl;
+    else cout<<"Not same"<<endl;
+    cout<<"This can be used as a sample for dsu"<<endl;
+    return 0;
+}
